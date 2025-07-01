@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.getItem("theme") || (prefersDarkScheme.matches ? "dark" : "light");
 
   const setTheme = (theme) => {
-    document.body.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   };
 
