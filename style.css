@@ -1,20 +1,45 @@
+/*========================
+  Base Variables (non-theme)
+=========================*/
 :root {
   --transition-speed: 0.3s;
   --theme-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  --dark-gradient: linear-gradient(135deg, #57bdff, #4d509b, #2dffc0);
-  --light-gradient: linear-gradient(135deg, #d6f3ff, #dadcff, #cefff0);
   --accent-glow: rgba(87, 189, 255, 0.5);
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
   --font-primary: "Segoe UI", sans-serif;
   --font-light: "Segoe UI Light", sans-serif;
 }
 
-/* Background & Body */
+/*========================
+  Dark Theme
+=========================*/
+[data-theme="dark"] {
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --bg-gradient: linear-gradient(135deg, #57bdff, #4d509b, #2dffc0);
+  --text-color: #ffffff;
+  --link-color: #aee6ff;
+  --shadow-intensity: rgba(45, 255, 192, 0.25);
+}
+
+/*========================
+  Light Theme
+=========================*/
+[data-theme="light"] {
+  --glass-bg: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --bg-gradient: linear-gradient(135deg, #d6f3ff, #dadcff, #cefff0);
+  --text-color: #2d1b4e;
+  --link-color: #005a9e;
+  --shadow-intensity: rgba(0, 0, 0, 0.1);
+}
+
+/*========================
+  Body & Background
+=========================*/
 body {
   font-family: var(--font-light);
-  color: #ffffff;
-  background: var(--dark-gradient);
+  color: var(--text-color);
+  background: var(--bg-gradient);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
   min-height: 100vh;
@@ -24,26 +49,34 @@ body {
   flex-direction: column;
 }
 
-/* Gradient Animation */
+/*========================
+  Gradient Animation
+=========================*/
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Glass Panel Base */
-.glass {
+/*========================
+  Glass Panels
+=========================*/
+.glass,
+[data-theme] .main-content,
+[data-theme] .info-box {
   background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(45, 255, 192, 0.2);
+  box-shadow: 0 8px 32px var(--shadow-intensity);
   padding: 2rem;
   margin-bottom: 2rem;
 }
 
-/* Sidebar */
+/*========================
+  Sidebar (if used)
+=========================*/
 .sidebar {
   position: fixed;
   top: 0;
@@ -52,12 +85,12 @@ body {
   height: 100vh;
   padding: 2rem 1rem;
   background: var(--glass-bg);
-  backdrop-filter: blur(10px);
   border-right: 1px solid var(--glass-border);
-  z-index: 100;
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  z-index: 100;
 }
 
 .sidebar h2 {
@@ -66,19 +99,25 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Main Content Layout */
+/*========================
+  Main Content Layout
+=========================*/
 main {
   margin-left: 240px;
   padding: 2rem;
 }
 
-/* Section Styling */
+/*========================
+  Sections
+=========================*/
 section {
   margin-bottom: 3rem;
   animation: fadeSlideIn 0.8s ease-out;
 }
 
-/* Animated Slide-in */
+/*========================
+  Fade-In Animation
+=========================*/
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
@@ -90,28 +129,32 @@ section {
   }
 }
 
-/* Button-styled Links */
+/*========================
+  Buttons & Links
+=========================*/
 .glass-button, a.button {
   display: block;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
-  color: #ffffff;
-  text-decoration: none;
+  color: var(--text-color);
   padding: 0.75rem 1rem;
   margin-top: 0.5rem;
-  transition: all 0.3s ease;
+  transition: var(--theme-transition);
   text-shadow: 0 0 6px var(--accent-glow);
+  text-decoration: none;
 }
 
 .glass-button:hover, a.button:hover {
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 15px rgba(45, 255, 192, 0.25);
+  box-shadow: 0 0 15px var(--shadow-intensity);
   transform: translateY(-2px);
 }
 
-/* Responsive */
+/*========================
+  Responsive Layout
+=========================*/
 @media (max-width: 768px) {
   .sidebar {
     position: relative;
