@@ -75,30 +75,32 @@ body {
 }
 
 /*========================
-  Sidebar (if used)
+  Navbar
 =========================*/
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 100vh;
-  padding: 2rem 1rem;
-  background: var(--glass-bg);
-  border-right: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
+.header nav {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  z-index: 100;
+  gap: 1rem;
+  justify-content: center;
 }
 
-.sidebar h2 {
-  font-size: 1.6rem;
-  text-shadow: 0 0 10px var(--accent-glow);
-  margin-bottom: 1rem;
+nav a {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--glass-bg);
+  color: var(--text-color);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  text-shadow: 0 0 6px var(--accent-glow);
+  transition: var(--theme-transition);
 }
 
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px var(--shadow-intensity);
+}
 /*========================
   Main Content Layout
 =========================*/
@@ -170,4 +172,31 @@ section {
     margin-left: 0;
     padding: 1rem;
   }
+}
+
+/*make links look like buttons*/
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: var(--theme-transition);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #00ddff;
+}
+
+/*footer*/
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--glass-bg);
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--link-color);
+  text-decoration: none;
 }
