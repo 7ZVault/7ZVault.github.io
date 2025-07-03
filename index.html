@@ -1,103 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7ZVault</title>
-    <link rel="stylesheet" href="/style.css"/>
-    <link rel="icon" type="image/x-icon" href="/Logo.ico">
-  </head>
-  <body>
-    <header>
-      <div class="header-content">
-        <h1>7ZVault</h1>
-        <h2>Download Software... Without the Crap!</h2>
-      </div>
-      <div class="header-right">
-        <div class="header-controls">
-          <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
-            <svg
-              class="sun-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-            >
-              <path
-                fill="currentColor"
-                d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
-              />
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7ZVault</title>
+  <link rel="stylesheet" href="./style.css" />
+  <!-- sadly this'll have to be updated on every site but it's worth it for localhost testing -->
+  <link rel="icon" type="image/x-icon" href="/Logo.ico">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>7ZVault</h1>
+      <h2>Download Software... Without the Crap!</h2>
+    </div>
+    <div class="header-right">
+      <div class="header-controls">
+        <nav>
+          <a href="index.html" class="active">Home</a>
+          <a href="/downloads.html">Downloads</a>
+          <a href="/about.html">About</a>
+          <a href="/contibute.html">Contibute</a>
+          <a href="/changelog.html">Changelog</a>
+          <a id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor"
+                d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
             </svg>
-            <svg
-              class="moon-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-            >
-              <path
-                fill="currentColor"
-                d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"
-              />
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor"
+                d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" />
             </svg>
-          </button>
-          <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="/downloads.html">Downloads</a>
-            <a href="/about.html">About</a>
-            <a href="/contibute.html">Contibute</a>
-            <a href="/changelog.html">Changelog</a>
-          </nav>
-        </div>
-        <button class="hamburger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          </a>
+        </nav>
       </div>
-      <div class="menu-overlay"></div>
-    </header>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="menu-overlay"></div>
+  </header>
 
-    <main>
-      <div class="content-container">
+  <main>
+    <div class="content-container">
 
-        <section id="warning">
-            <h1>Warning!</h1>
-            <p>This website has broken CSS, if you would like to help, please make a PR.</p>
-        </section>
-          
-        <section class="main-content">
-          <h2>Welcome to 7ZVault</h2>
-          <p>
-            The best place to download software, without the crap, rebuilt from BetaVault, this is an improvement from slow Internet Archive speeds 
-            and locked down BetaArchive FTP Access. This site is still in it's early stages and might have issues, if you encounter any, please report
-            them to the Github Repo's Issues page so that they can be looked into.
-          </p>
-          <p>Want to learn more about the builds or bootlegs, there are a couple of ways to do so.</p>
-          <ul>
-            <li>For Beta's use <a href="https://betawiki.net">BetaWiki</a></li>
-            <li>For Bootlegs use <a href="https://crustywindo.ws">CrustyWindows!</a></li>
-          </ul>
-          </p>
-        </section>
+      <section id="warning">
+        <h1>Warning!</h1>
+        <p>This website has broken CSS, if you would like to help, please make a PR.</p>
+      </section>
 
-        <aside class="info-box">
-          <h3>coming soon</h3>
-          <p>i didnt set this up correctly</p>
-          <ul>
-            <li>idk maybe someone will help me</li>
-            <li>i ran out of ideas on filling these in</li>
-            <li>site has a new theme tho</li>
-          </ul>
-        </aside>
-      </div>
-    </main>
+      <section class="main-content">
+        <h2>Welcome to 7ZVault</h2>
+        <p>
+          The best place to download software, without the crap, rebuilt from BetaVault, this is an improvement from
+          slow Internet Archive speeds
+          and locked down BetaArchive FTP Access. This site is still in it's early stages and might have issues, if you
+          encounter any, please report
+          them to the Github Repo's Issues page so that they can be looked into.
+        </p>
+        <p>Want to learn more about the builds or bootlegs, there are a couple of ways to do so.</p>
+        <ul>
+          <li>For Beta's use <a href="https://betawiki.net">BetaWiki</a></li>
+          <li>For Bootlegs use <a href="https://crustywindo.ws">CrustyWindows!</a></li>
+        </ul>
+        </p>
+      </section>
 
-    <footer>
-      <p>&copy; 2025 Wintuber Union All rights reserved.</p>
-      <p>Wintuber Union</p>
-      <p>Site created by: <a href="https://7zeb.github.io">7Zeb</a></p>
-    </footer>
+      <aside class="info-box">
+        <h3>coming soon</h3>
+        <p>i didnt set this up correctly</p>
+        <ul>
+          <li>idk maybe someone will help me</li>
+          <li>i ran out of ideas on filling these in</li>
+          <li>site has a new theme tho</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
 
-    <script src="./src/startup.js"></script>
-  </body>
+  <footer>
+    <p>&copy; 2025 Wintuber Union All rights reserved.</p>
+    <p>Wintuber Union</p>
+    <p>Site created by: <a href="https://7zeb.github.io">7Zeb</a></p>
+  </footer>
+
+  <script src="./src/startup.js"></script>
+</body>
+
 </html>
